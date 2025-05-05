@@ -1,51 +1,102 @@
-# Chess_Bot
-This repository contains two main components:
+Chess Engine and Game Interface
+This repository contains two Jupyter notebooks:
 
-Chess_BOT.ipynb: A Python notebook implementing a chess engine.
-Chess_Game.ipynb: A Python notebook to play a game of chess using the implemented engine.
+Chess_BOT.ipynb: Implements a basic chess engine using the python-chess library.
+
+Chess_Game.ipynb: Allows users to play a game of chess against the engine.
+
+📘 Overview
 Chess_BOT.ipynb
-This notebook includes the implementation of a chess engine that can evaluate and make moves on a chessboard. It uses the python-chess library and implements the following features:
+This notebook defines a simple chess engine that evaluates positions and makes optimal moves based on evaluation functions and a depth-limited search.
 
-Engine Class: Contains methods for evaluating the board, generating moves, and deciding on the best move.
-Evaluation Functions: Evaluates the board based on piece values, position, and game phase.
-Move Generation: Generates and evaluates legal moves to find the best move for the given position.
-Key Functions and Classes
-Engine Class: The core of the chess engine, handling move generation and evaluation.
-__init__(self, board, maxDepth, color): Initializes the engine with the board, search depth, and color.
-getBestMove(self): Determines the best move to play.
-evalFunt(self): Evaluates the board state.
-openning(self): Evaluates the opening phase.
-mate(self): Checks for checkmate or stalemate conditions.
-sqResPoint(self, square): Evaluates the value of a piece on a given square.
-engine(self, candidate, depth): Recursively evaluates moves to a given depth.
+🔧 Features
+Engine Class:
+
+Handles board evaluation, move generation, and best move selection.
+
+Evaluation Functions:
+
+Considers material value, piece positioning, and game phase (opening, midgame, endgame).
+
+Move Generation:
+
+Legal moves are generated and evaluated to determine the best move.
+
+🔑 Key Classes and Functions
+Engine(board, maxDepth, color) – Initializes the engine with board state, search depth, and color.
+
+getBestMove() – Returns the best move based on evaluation.
+
+evalFunt() – Evaluates the board position numerically.
+
+openning() – Specialized evaluation for opening phase.
+
+mate() – Checks for checkmate or stalemate.
+
+sqResPoint(square) – Assigns value to pieces based on position.
+
+engine(candidate, depth) – Recursive evaluation function.
+
 Chess_Game.ipynb
-This notebook provides an interface to play a game of chess using the engine implemented in Chess_BOT.ipynb. It supports playing as either white or black against the engine.
+This notebook provides an interface for human vs engine play.
 
-Key Functions and Classes
-Main Class: Manages the game flow and interaction between the player and the engine.
-__init__(self, board): Initializes the game with a given board state.
-playHumanMove(self): Handles moves made by the human player.
-playEngineMove(self, maxDepth, color): Executes the engine's move.
-startGame(self): Starts a new game and manages the game loop.
-How to Play
-Start a Game:
+🎮 Features
+Play as either white or black.
 
-Run the Chess_Game.ipynb notebook.
-Choose your color (b for black, w for white) and set the search depth for the engine.
-Make Your Move:
+Enter moves in standard algebraic notation (e.g., e2e4).
 
-Enter your move in standard algebraic notation.
-The engine will respond with its move.
-Continue Playing:
+Engine responds with calculated moves.
 
-The game continues until checkmate, stalemate, or draw.
-Reset and Start Again:
+Automatically detects game end (checkmate, stalemate, draw).
 
-The board will reset after the game ends, and you can start a new game.
-Requirements
-Python 3.x
-python-chess library
-Jupyter Notebook
-Install the required library using pip:
+🔑 Key Classes and Functions
+Main(board) – Initializes game flow.
 
+playHumanMove() – Handles user input for moves.
+
+playEngineMove(maxDepth, color) – Makes the engine’s move.
+
+startGame() – Controls the main game loop.
+
+▶️ How to Play
+Install Dependencies:
+
+bash
+Copy
+Edit
 pip install chess
+Launch Jupyter Notebook:
+
+bash
+Copy
+Edit
+jupyter notebook
+Run Chess_Game.ipynb:
+
+Choose your side (w for white, b for black).
+
+Set the engine’s search depth.
+
+Input your moves when prompted.
+
+Game Ends:
+
+The game will end upon checkmate, stalemate, or draw.
+
+You can reset and start a new game.
+
+✅ Requirements
+Python 3.x
+
+Jupyter Notebook
+
+python-chess library
+
+📂 Repository Structure
+bash
+Copy
+Edit
+.
+├── Chess_BOT.ipynb       # Engine logic
+├── Chess_Game.ipynb      # Game interface
+└── README.md             # Project documentation
