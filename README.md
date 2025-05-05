@@ -87,8 +87,3 @@ This notebook provides an interface for human vs engine play.
 
 ---
 
-## 📂 Repository Structure
-├── Chess_BOT.ipynb # Engine logic
-├── Chess_Game.ipynb # Game interface
-└── README.md # Project documentation
-
